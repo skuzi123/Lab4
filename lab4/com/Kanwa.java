@@ -12,8 +12,9 @@ public class Kanwa extends JPanel implements KeyListener, MouseListener {
 
     public Kanwa() {
 
-        Label label = new Label("Nacisnij o lub k");
-        label.setFont((new Font("MV Boli", Font.ITALIC, 24)));
+        JLabel label = new JLabel();
+        label.setText(" Nacisnij o lub k ");
+        label.setFont((new Font("MV Boli", Font.ITALIC, 18)));
         label.setLocation(0,0);
 
         this.setSize(400,300);
@@ -45,18 +46,18 @@ public class Kanwa extends JPanel implements KeyListener, MouseListener {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.WHITE);
         g2d.fillRect(0, 0, WIDTH, HEIGHT);
-        drawRectangles(g2d);
+        drawShape(g2d);
     }
-    private void drawRectangles(Graphics2D g2d) {
+    private void drawShape(Graphics2D g2d) {
 
-        if(!(x ==0 && y ==0)){
+        if(!(x==0 && y==0)){
             if(shape =='k'){
                 g2d.setColor(Color.RED);
-                g2d.fillRect(x, y,90,90);
+                g2d.fillRect(x,y,90,90);
             }
             if(shape =='o'){
                 g2d.setColor(Color.GREEN);
-                g2d.fillOval(x, y,90,90);
+                g2d.fillOval(x,y,90,90);
             }
         }
         this.repaint();
